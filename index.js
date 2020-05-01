@@ -9,7 +9,7 @@ var controllers = require('./lib/controllers')
 function exp(plugin) {
     plugin.settings = {
         wordlist: '',
-        converts: []
+        converts: [{from:'',to:''}]
     }
     plugin.init = function (params, callback) {
         var router = params.router
