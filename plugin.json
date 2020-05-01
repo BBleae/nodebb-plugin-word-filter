@@ -1,0 +1,47 @@
+{
+	"id": "nodebb-plugin-word-filter",
+	"name": "NodeBB word filter Plugin",
+	"description": "NodeBB Plugin that hide specific words.",
+	"url": "https://github.com/BBleae/nodebb-plugin-word-filter",
+	"library": "./index.js",
+	"less": [],
+	"staticDirs": {
+		"lib": "public/src"
+	},
+	"scripts": [],
+	"hooks": [
+		{
+			"hook": "filter:parse.post",
+			"method": "parse",
+			"callbacked": true
+		},{
+			"hook": "filter:router.page",
+			"method": "addMiddleware",
+			"callbacked": true
+		},
+		{
+			"hook": "static:app.load",
+			"method": "init",
+			"callbacked": true
+		},
+		{
+			"hook": "filter:admin.header.build",
+			"method": "addAdminNavigation",
+			"callbacked": true
+		},
+		{
+			"hook": "static:user.loggedOut",
+			"method": "cleanup",
+			"callbacked": true
+		},
+		{
+			"hook": "filter:config.get",
+			"method": "appendConfig",
+			"callbacked": true
+		}
+	],
+	"acpScripts": [
+		"static/lib/admin.js"
+	],
+	"templates": "static/templates"
+}

@@ -1,0 +1,31 @@
+{
+  "author": {
+    "name": "BBleae",
+    "email": "bbleae@baka.studio",
+    "url": "https://baka.studio/"
+  },
+  "bugs": {
+    "url": "https://github.com/BBleae/nodebb-plugin-word-filter/issues"
+  },
+  "deprecated": false,
+  "description": "NodeBB Plugin that hide specific words.",
+  "homepage": "https://github.com/BBleae/nodebb-plugin-word-filter",
+  "keywords": [
+    "NodeBB",
+    "Plugin"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "nodebb-plugin-word-filter",
+  "nbbpm": {
+    "compatibility": "^1.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BBleae/nodebb-plugin-word-filter.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.1"
+}
