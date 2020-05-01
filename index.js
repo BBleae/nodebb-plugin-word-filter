@@ -57,6 +57,7 @@ function exp(plugin) {
     }
 
     plugin.addAdminNavigation = function (header, callback) {
+        winston.warn('[word-filter] adding acp navigation...')
         header.plugins.push({
             route: '/plugins/word-filter',
             icon: 'fa-user-secret',

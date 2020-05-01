@@ -4,11 +4,6 @@
 	"description": "NodeBB Plugin that hide specific words.",
 	"url": "https://github.com/BBleae/nodebb-plugin-word-filter",
 	"library": "./index.js",
-	"less": [],
-	"staticDirs": {
-		"lib": "public/src"
-	},
-	"scripts": [],
 	"hooks": [
 		{
 			"hook": "filter:parse.post",
