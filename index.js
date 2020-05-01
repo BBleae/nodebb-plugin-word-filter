@@ -7,7 +7,9 @@ var winston = module.parent.require('winston')
 var controllers = require('./lib/controllers')
 
 function exp(plugin) {
-    plugin.settings = {}
+    plugin.settings = {
+        wordlist: ''
+    }
     plugin.init = function (params, callback) {
         var router = params.router
         var hostMiddleware = params.middleware
@@ -58,7 +60,7 @@ function exp(plugin) {
         header.plugins.push({
             route: '/plugins/word-filter',
             icon: 'fa-user-secret',
-            name: 'Session Sharing'
+            name: 'Word Filter'
         })
 
         callback(null, header)
