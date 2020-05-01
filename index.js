@@ -53,5 +53,15 @@ function exp(plugin) {
             callback()
         })
     }
+
+    plugin.addAdminNavigation = function (header, callback) {
+        header.plugins.push({
+            route: '/plugins/word-filter',
+            icon: 'fa-user-secret',
+            name: 'Session Sharing'
+        })
+
+        callback(null, header)
+    }
 };
 exp(module.exports)

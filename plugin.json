@@ -14,10 +14,6 @@
 			"hook": "filter:parse.post",
 			"method": "parse",
 			"callbacked": true
-		},{
-			"hook": "filter:router.page",
-			"method": "addMiddleware",
-			"callbacked": true
 		},
 		{
 			"hook": "static:app.load",
@@ -27,16 +23,6 @@
 		{
 			"hook": "filter:admin.header.build",
 			"method": "addAdminNavigation",
-			"callbacked": true
-		},
-		{
-			"hook": "static:user.loggedOut",
-			"method": "cleanup",
-			"callbacked": true
-		},
-		{
-			"hook": "filter:config.get",
-			"method": "appendConfig",
 			"callbacked": true
 		}
 	],
