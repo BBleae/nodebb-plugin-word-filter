@@ -41,7 +41,7 @@ function exp(plugin) {
                 return callback(err)
             }
 
-            if (!settings.hasOwnProperty('wordlist') || !settings.secret.length) {
+            if (!settings.hasOwnProperty('wordlist') || !settings.wordlist.length) {
                 winston.error(
                     '[word-filter] wordlist not found, disabled.'
                 )
