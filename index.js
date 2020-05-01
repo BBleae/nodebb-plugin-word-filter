@@ -22,12 +22,16 @@ function exp(plugin) {
         plugin.reloadSettings(callback)
     }
 
-    "use strict";
-    var converts = plugin.settings.wordlist.split(',').map(v => ({ form: v, to: v.replace(/./g, '*') }));
+    var converts = plugin.settings.wordlist.split(',').map(v => ({ form: new RegExp(`${v}`, 'g'), to: v.replace(/./g, '*') }));
+    console.log('converts:', converts)
 
     plugin.parse = function (data, callback) {
+        console.log('content:',data.postData.content);
+        
         try {
             for (var i = 0; i < converts.length; i++)
+                console.log('applying convert:',converts[i]);
+                
                 data.postData.content = data.postData.content.replace(converts[i].from, converts[i].to);
             callback(null, data);
         } catch (ex) {
@@ -41,17 +45,10 @@ function exp(plugin) {
                 return callback(err)
             }
 
-            if (!settings.hasOwnProperty('wordlist') || !settings.wordlist.length) {
-                winston.error(
-                    '[word-filter] wordlist not found, disabled.'
-                )
-                return callback()
-            }
-
             winston.info('[word-filter] Settings OK')
             plugin.settings = _.defaults(_.pick(settings, Boolean), plugin.settings)
             plugin.ready = true
-
+            console.log('settings:', plugin.settings)
             callback()
         })
     }
