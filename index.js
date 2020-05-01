@@ -23,13 +23,9 @@ function exp(plugin) {
         plugin.reloadSettings(callback)
     }
 
-    plugin.parse = function (data, callback) {
-        console.log('content:',data.postData.content);
-        
+    plugin.parse = function (data, callback) {        
         try {
-            for (var i = 0; i < plugin.settings.converts.length; i++)
-                console.log('applying convert:',plugin.settings.converts[i]);
-                
+            for (var i = 0; i < plugin.settings.converts.length; i++)                
                 data.postData.content = data.postData.content.replace(plugin.settings.converts[i].from, plugin.settings.converts[i].to);
             callback(null, data);
         } catch (ex) {
@@ -45,9 +41,8 @@ function exp(plugin) {
 
             winston.info('[word-filter] Settings OK')
             plugin.settings = _.defaults(_.pick(settings, Boolean), plugin.settings)
-            plugin.settings.converts = plugin.settings.wordlist.split(',').map(v => ({ form: new RegExp(`${v}`, 'g'), to: v.replace(/./g, '*') }));
+            plugin.settings.converts = plugin.settings.wordlist.split(',').map(v => ({ from: new RegExp(`${v}`, 'g'), to: v.replace(/./g, '*') }));
             plugin.ready = true
-            console.log('settings:', plugin.settings)
             callback()
         })
     }
