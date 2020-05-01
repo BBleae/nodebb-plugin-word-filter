@@ -5,7 +5,7 @@
         <div class="col-sm-2 col-xs-12 settings-header">General</div>
         <div class="col-sm-10 col-xs-12">
           <div class="form-group">
-            <label for="wordlist">违禁词列表</label>
+            <label for="wordlist">违禁词列表(用逗号分隔)</label>
             <input
               type="text"
               id="wordlist"
