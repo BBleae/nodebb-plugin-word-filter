@@ -1,8 +1,8 @@
 'use strict'
 
-var meta = module.parent.require('./src/meta')
-var _ = module.parent.require('underscore')
-var winston = module.parent.require('winston')
+var meta = require.main.require('./src/meta')
+var _ = require.main.require('underscore')
+var winston = require.main.require('winston')
 
 var controllers = require('./lib/controllers')
 
