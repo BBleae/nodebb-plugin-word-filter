@@ -1,6 +1,6 @@
 'use strict'
 
-var meta = module.parent.require('./meta')
+var meta = module.parent.require('./src/meta')
 var _ = module.parent.require('underscore')
 var winston = module.parent.require('winston')
 
